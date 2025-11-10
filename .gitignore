@@ -1,7 +1,8 @@
 # Godot-specific ignores
 .import/
-export_presets.cfg
-
-# OS / editor junk
-.DS_Store
-Thumbs.db
+.export/
+*.cfg
+*.godot
+*.mono/
+*.mono/assemblies/
+*.mono/build/
