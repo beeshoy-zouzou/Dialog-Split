@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Game/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Game/NPC.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Game/Main.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Game/Collectible.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Game/KeyMessage.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Game/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Game/OldManNpc.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Game/Map.tscn" type="PackedScene" id=9]
+
+[node name="World" type="Node"]
+script = ExtResource( 4 )
+
+[node name="Map" type="Node" parent="."]
+
+[node name="Map" parent="Map" instance=ExtResource( 9 )]
+position = Vector2( 0.456436, 0 )
+
+[node name="Player" type="Node" parent="."]
+
+[node name="Player" parent="Player" groups=[
+"Player",
+] instance=ExtResource( 2 )]
+position = Vector2( 343.901, 85.1623 )
+
+[node name="NPC" type="Node" parent="."]
+
+[node name="NPC" parent="NPC" instance=ExtResource( 3 )]
+position = Vector2( 149.147, 274.682 )
+
+[node name="Collectible" type="Node" parent="."]
+
+[node name="Collectible" parent="Collectible" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 519.652, 220.195 )
+
+[node name="KeyMessage" type="Node" parent="."]
+
+[node name="KeyMessage" parent="KeyMessage" instance=ExtResource( 6 )]
+visible = false
+margin_left = 220.573
+margin_top = 163.583
+margin_right = 420.573
+margin_bottom = 213.583
+
+[node name="Door" type="Node" parent="."]
+
+[node name="Door" parent="Door" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 433.22, -30.3831 )
+
+[node name="NPC1" type="Node" parent="."]
+
+[node name="OldManNpc" parent="NPC1" instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 431.781, -172.079 )

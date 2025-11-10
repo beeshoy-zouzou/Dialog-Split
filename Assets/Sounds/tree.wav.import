@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tree.wav-3ebf065e67f34f48c9cfbd02212c8585.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/tree.wav"
+dest_files=[ "res://.import/tree.wav-3ebf065e67f34f48c9cfbd02212c8585.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

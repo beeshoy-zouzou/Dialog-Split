@@ -1,0 +1,30 @@
+extends Control
+
+
+onready var option_button = $HBoxContainer/OptionButton as OptionButton
+
+
+
+const RESOLUTION_DICTIONARY = {
+	"1152 * 648" : Vector2(int(1152),int(648)),
+	"1280 * 720" : Vector2(int(1280), int(720)),
+	"1920 * 1080" : Vector2(int(1920), int(1080))
+}
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	add_resolution_item()
+#	load_data()
+
+func load_data():
+	_on_OptionButton_item_selected(SettingsDataContainer.get_resolution_index())
+	option_button.select(SettingsDataContainer.get_resolution_index())
+
+func add_resolution_item():
+	for resolution_size_text in RESOLUTION_DICTIONARY:
+		option_button.add_item(resolution_size_text)
+
+func _on_OptionButton_item_selected(index):
+	SettingsSignalBus.emit_on_resolution_selected(index)
+	OS.set_window_size(RESOLUTION_DICTIONARY.values()[index])

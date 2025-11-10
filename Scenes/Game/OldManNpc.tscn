@@ -1,0 +1,119 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Assets/Gipsy/Gipsy spritesheet no chest.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Game/OldManNpc.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Game/KeyMessage.tscn" type="PackedScene" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 80, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 80, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 80, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 240, 80, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 320, 80, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 80, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 240, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 320, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 480, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 560, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 640, 0, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 720, 0, 80, 80 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "talk",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=18]
+radius = 16.9531
+height = 22.8657
+
+[sub_resource type="CircleShape2D" id=19]
+radius = 20.0
+
+[node name="OldManNpc" type="Node2D"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 2 )
+message_panel_path = NodePath("../KeyMessage")
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( -1.42667, -19.2867 )
+frames = SubResource( 17 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 18 )
+
+[node name="InteractionArea" type="Area2D" parent="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/InteractionArea"]
+shape = SubResource( 19 )
+
+[node name="KeyMessage" parent="." instance=ExtResource( 3 )]
+visible = false
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 200.0
+margin_bottom = 50.0
+
+[connection signal="body_entered" from="KinematicBody2D/InteractionArea" to="KinematicBody2D" method="_on_InteractionArea_body_entered"]
+[connection signal="body_exited" from="KinematicBody2D/InteractionArea" to="KinematicBody2D" method="_on_InteractionArea_body_exited"]

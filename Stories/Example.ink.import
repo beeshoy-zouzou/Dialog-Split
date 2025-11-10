@@ -1,0 +1,13 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+path="res://.import/Example.ink-b8e90e475c7369be9732c6cbefede6a6.res"
+
+[deps]
+
+source_file="res://Stories/Example.ink"
+dest_files=[ "res://.import/Example.ink-b8e90e475c7369be9732c6cbefede6a6.res" ]
+
+[params]
+

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dark_forest.wav-bb7fd25e18fe05ddf4f3531ad1302b3c.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/dark_forest.wav"
+dest_files=[ "res://.import/dark_forest.wav-bb7fd25e18fe05ddf4f3531ad1302b3c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

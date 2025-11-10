@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Resources/Settings/PlayerKeybindResource.gd" type="Script" id=1]
+
+[sub_resource type="InputEventKey" id=1]
+pressed = true
+scancode = 1
+unicode = 68
+
+[sub_resource type="InputEventKey" id=2]
+pressed = true
+scancode = 9
+unicode = 65
+
+[sub_resource type="InputEventKey" id=3]
+pressed = true
+scancode = 1
+unicode = 67
+
+[resource]
+script = ExtResource( 1 )
+default_move_left_key = SubResource( 2 )
+default_move_right_key = SubResource( 3 )
+default_jump_key = SubResource( 1 )
