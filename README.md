@@ -35,6 +35,3 @@ A playable export is available on **Itch.io** for testing:
 
 
 ---
-### Credits
-Created by *Beeshoy Metry*  
-Built with Godot 3.3
