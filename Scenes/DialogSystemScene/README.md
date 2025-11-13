@@ -13,7 +13,7 @@ It allows for branching conversations and interaction flow without relying on ex
 
 ## 2. Inky-Integrated Dialog System
 
-This dialog system uses **Inky** and **Godot** via the inkgd addon https://github.com/ephread/inkgd by **Frédéric Maquin**.
+This dialog system uses **Inky** and **Godot** via the inkgd addon.
 It is designed to handle **branching conversations** and story-driven interactions for NPCs in **Dialog Split**.
 
 ### Features
